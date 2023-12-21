@@ -40,3 +40,7 @@ sourceSets {
 springBoot {
     mainClass = 'io.metisdata.demo.RestServiceApplication'
 }
+
+bootRun {
+     jvmArgs = ["-Dotel.javaagent.debug=true", "-javaagent:opentelemetry-javaagent.jar", "-Dotel.instrumentation.common.db-statement-sanitizer.enabled=false"]
+}
