@@ -49,6 +49,8 @@ bootRun {
         "-Dotel.exporter.otlp.endpoint=https://ingest.metisdata.io/",
         "-Dotel.exporter.otlp.headers=x-api-key=r1cfLS7ao04PtzJpd2ZuJ3EFFvTmCwTn86f6Hwwv",
         "-Dotel.exporter.otlp.protocol=http/protobuf",
-        "-Dotel.instrumentation.common.db-statement-sanitizer.enabled=false"
+        "-Dotel.instrumentation.common.db-statement-sanitizer.enabled=false",
+        "-Dotel.instrumentation.hibernate.experimental-span-attributes=true",
+        "-Dotel.traces.exporter=logging-otlp"
     ]
 }
