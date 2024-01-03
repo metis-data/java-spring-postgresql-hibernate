@@ -28,8 +28,8 @@ test {
         "-Dotel.javaagent.debug=true",
         "-javaagent:opentelemetry-javaagent.jar",
         "-Dotel.service.name=java",
-        "-Dotel.exporter.otlp.endpoint=http://127.0.0.1:4318/v1/traces",
-        "-Dotel.exporter.otlp.protocol=http/protobuf",
+        "-Dotel.exporter.otlp.traces.endpoint=http://127.0.0.1:4318/v1/traces",
+        "-Dotel.exporter.otlp.traces.protocol=http/protobuf",
         "-Dotel.instrumentation.common.db-statement-sanitizer.enabled=false",
         "-Dotel.instrumentation.hibernate.experimental-span-attributes=true",
         "-Dotel.traces.exporter=otlp"
@@ -58,8 +58,8 @@ bootRun {
         "-Dotel.javaagent.debug=true",
         "-javaagent:opentelemetry-javaagent.jar",
         "-Dotel.service.name=java",
-        "-Dotel.exporter.otlp.endpoint=http://127.0.0.1:4318/v1/traces",
-        "-Dotel.exporter.otlp.protocol=http/protobuf",
+        "-Dotel.exporter.otlp.traces.endpoint=http://127.0.0.1:4318/v1/traces",
+        "-Dotel.exporter.otlp.traces.protocol=http/protobuf",
         "-Dotel.instrumentation.common.db-statement-sanitizer.enabled=false",
         "-Dotel.instrumentation.hibernate.experimental-span-attributes=true",
         "-Dotel.traces.exporter=otlp"
