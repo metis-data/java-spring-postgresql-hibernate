@@ -4,6 +4,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Test;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,5 +22,12 @@ public class TitleRatingsControllerTests {
 	@Test
 	public void getBestMoviesShouldReturnMovies() throws Exception {
 		this.mockMvc.perform(get("/titles/ratings/best")).andDo(print()).andExpect(status().isOk());
+	}
+
+	@AfterAll
+	public static void tearDown(){
+		try{
+			Thread.sleep(30000);
+		}catch(Exception e){}
 	}
 }

@@ -21,7 +21,10 @@ dependencies {
 }
 
 test {
-	useJUnitPlatform()
+	useJUnitPlatform()    
+    jvmArgs = [
+        "-javaagent:opentelemetry-javaagent.jar"
+    ]
 }
 
 sourceSets {
@@ -42,7 +45,7 @@ springBoot {
 }
 
 bootRun {
-     jvmArgs = [
+    jvmArgs = [
         "-Dotel.javaagent.debug=true",
         "-javaagent:opentelemetry-javaagent.jar",
         "-Dotel.service.name=java",

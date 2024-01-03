@@ -1,0 +1,1 @@
+./gradlew clean test --info -Dotel.javaagent.enabled=false
