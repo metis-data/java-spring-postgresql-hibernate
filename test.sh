@@ -1,1 +1,2 @@
-./gradlew clean test --info -Dotel.javaagent.enabled=false
+MOCK_CONTAINER_DEPENDENCIES=true \
+    ./gradlew clean test --info
