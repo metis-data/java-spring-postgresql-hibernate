@@ -45,12 +45,11 @@ bootRun {
      jvmArgs = [
         "-Dotel.javaagent.debug=true",
         "-javaagent:opentelemetry-javaagent.jar",
-        "-Dotel.service.name=java-demo",
-        "-Dotel.exporter.otlp.endpoint=https://ingest.metisdata.io/",
-        "-Dotel.exporter.otlp.headers=x-api-key=r1cfLS7ao04PtzJpd2ZuJ3EFFvTmCwTn86f6Hwwv",
+        "-Dotel.service.name=java",
+        "-Dotel.exporter.otlp.endpoint=http://127.0.0.1:4318",
         "-Dotel.exporter.otlp.protocol=http/protobuf",
         "-Dotel.instrumentation.common.db-statement-sanitizer.enabled=false",
         "-Dotel.instrumentation.hibernate.experimental-span-attributes=true",
-        "-Dotel.traces.exporter=logging-otlp"
+        "-Dotel.traces.exporter=otlp"
     ]
 }
