@@ -17,6 +17,7 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'javax.persistence:javax.persistence-api:2.2'
     implementation 'org.postgresql:postgresql:42.2.24'
+    implementation group: 'net.ttddyy', name: 'datasource-proxy', version: '1.4.1'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.testcontainers:testcontainers:1.19.3'
     testImplementation 'org.testcontainers:junit-jupiter'
