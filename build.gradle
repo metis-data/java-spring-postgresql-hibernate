@@ -13,11 +13,23 @@ repositories {
 }
 
 dependencies {
+
+    implementation("io.opentelemetry:opentelemetry-api:1.34.1");
+    implementation('io.opentelemetry:opentelemetry-sdk:1.34.1');
+    implementation("io.opentelemetry:opentelemetry-sdk-extension-autoconfigure:1.34.1");
+    implementation("io.opentelemetry:opentelemetry-sdk-extension-autoconfigure-spi:1.34.1");
+    implementation('io.opentelemetry:opentelemetry-exporter-otlp:1.34.1');
+    implementation('io.opentelemetry:opentelemetry-exporter-common:1.34.1');
+    implementation('io.opentelemetry:opentelemetry-exporter-sender-okhttp:1.34.1');
+    implementation('io.opentelemetry.javaagent:opentelemetry-javaagent:2.0.0');
+    implementation('io.opentelemetry:opentelemetry-sdk-common:1.34.1');
+
 	implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'javax.persistence:javax.persistence-api:2.2'
     implementation 'org.postgresql:postgresql:42.2.24'
     implementation group: 'net.ttddyy', name: 'datasource-proxy', version: '1.4.1'
+
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.testcontainers:testcontainers:1.19.3'
     testImplementation 'org.testcontainers:junit-jupiter'
@@ -27,7 +39,7 @@ test {
 	useJUnitPlatform()    
     jvmArgs = [
         "-Dotel.javaagent.debug=true",
-        "-javaagent:opentelemetry-javaagent.jar",
+        "-javaagent:opentelemetry-javaagent-2.0.0.jar",
         "-Dotel.service.name=java",
         "-Dotel.exporter.otlp.traces.endpoint=http://127.0.0.1:4318/v1/traces",
         "-Dotel.exporter.otlp.traces.protocol=http/protobuf",
@@ -57,7 +69,7 @@ springBoot {
 bootRun {
     jvmArgs = [
         "-Dotel.javaagent.debug=true",
-        "-javaagent:opentelemetry-javaagent.jar",
+        "-javaagent:opentelemetry-javaagent-2.0.0.jar",
         "-Dotel.service.name=java",
         "-Dotel.exporter.otlp.traces.endpoint=http://127.0.0.1:4318/v1/traces",
         "-Dotel.exporter.otlp.traces.protocol=http/protobuf",
